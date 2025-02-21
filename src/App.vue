@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { onMounted } from 'vue'
+import { useCounterStore } from '@/stores/counter'
 import HelloWorld from './components/HelloWorld.vue'
+
+const store = useCounterStore()
+onMounted(async () => {
+  await store.connect()
+})
 </script>
 
 <template>

@@ -1,5 +1,6 @@
-import { ref, computed } from 'vue'
+import { ref, computed, type Ref } from 'vue'
 import { defineStore } from 'pinia'
+import { getMatrixClient, TMatrixClient } from '@/utils/matrix'
 
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)
@@ -8,5 +9,12 @@ export const useCounterStore = defineStore('counter', () => {
     count.value++
   }
 
-  return { count, doubleCount, increment }
+
+
+  const matrix: Ref<TMatrixClient | null> = ref(null)
+
+  const connect = async () => {
+    // matrix.value = getMatrixClient()
+  }
+  return { count, doubleCount, matrix, increment, connect }
 })
