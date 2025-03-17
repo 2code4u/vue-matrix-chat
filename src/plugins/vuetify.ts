@@ -9,9 +9,9 @@ const vuetify = createVuetify({
   components,
   directives,
   ...{
-    locale: {
-      locale: 'ru',
-    },
+    // locale: {
+    //   locale: 'ru',
+    // },
     theme: {
       themes: {
         light: {
